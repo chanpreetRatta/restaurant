@@ -34,6 +34,29 @@ function navBar() {
 function main() {
   let main = document.createElement("div");
   main.setAttribute("class", "main");
+
+  let mainMenu = document.createElement("div");
+  mainMenu.appendChild(document.createTextNode("this is the menu page"));
+  setAttribute(mainMenu, {
+    class: "main-menu tab",
+  });
+
+  let mainHome = document.createElement("div");
+  mainHome.appendChild(document.createTextNode("this is the Home page"));
+  setAttribute(mainHome, {
+    class: "main-home tab",
+    style: "display: none",
+  });
+
+  let mainAboutUs = document.createElement("div");
+  mainAboutUs.appendChild(document.createTextNode("this is the About Us page"));
+  setAttribute(mainAboutUs, {
+    class: "main-aboutUs tab",
+    style: "display: none",
+  });
+
+  main.append(mainMenu, mainAboutUs, mainHome);
+
   return main;
 }
 
@@ -55,3 +78,18 @@ function setAttribute(element, attributes) {
 content.appendChild(navBar());
 content.appendChild(main());
 content.appendChild(footer());
+
+function tabs(event) {
+  let ids = ["home", "menu", "aboutUs"];
+  let main = document.querySelector(".main");
+  if (ids.includes(event.target.id)) {
+    main.childNodes.forEach((child) => {
+      child.style.display = "none";
+    });
+    document.getElementsByClassName(
+      `main-${event.target.id}`
+    )[0].style.display = "block";
+  }
+}
+
+content.addEventListener("click", tabs);

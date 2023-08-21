@@ -8,6 +8,9 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
 
 
 #content{
@@ -18,9 +21,6 @@
 
 }
 
-a{
-    text-decoration: none;
-}
 
 .nav-bar{
     width: 100%;
@@ -36,6 +36,29 @@ a{
 .nav-bar > a:visited{
     color: var(--div-font-color);
 }
+
+.main{
+    display: grid;
+    padding-top: 50px; 
+    grid-template-rows: auto;
+}
+
+.tab{
+   
+    justify-self: center; 
+    width: 50%;
+    height: fit-content;
+    padding: 1.5em;
+    background-color: var(--div-background-color);
+    color: var(--div-font-color);
+    opacity: 0.9;
+    border: 1px solid --div-font-color;
+    border-radius: 5px;
+    
+}
+
+
+
 
 .footer{
     background-color: var(--div-background-color);
