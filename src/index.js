@@ -1,5 +1,5 @@
-import "./style.css";
 import "normalize.css";
+import "./style.css";
 
 let content = document.querySelector("#content");
 function navBar() {
